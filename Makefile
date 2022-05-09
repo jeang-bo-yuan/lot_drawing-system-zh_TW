@@ -1,11 +1,10 @@
 #variable definition
-CXX = clang++
+CXX = g++
 override CXXFLAGS += -g -Wall -Wextra
+EXEC := lotdraw
 ifeq ($(OS), Windows_NT)
 	RM = del /F /Q
-	EXEC = main.exe
-else
-	EXEC = 	main
+	EXEC := $(EXEC).exe
 endif
 OBJS = main.o creating.o drawing.o bowl.o token.o
 HEADERS = bowl.hpp token.hpp
