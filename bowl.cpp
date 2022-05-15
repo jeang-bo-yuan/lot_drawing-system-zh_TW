@@ -11,9 +11,9 @@
 size_t bowl_t::remove(const std::string& target, size_t num){
 	size_t i=0;
 	while(num){
-		auto it = std::find(d_lots.begin(), d_lots.end(), target);
-		if(it!=d_lots.end()){
-			d_lots.erase(it);
+		auto it = std::find(d_lots.rbegin(), d_lots.rend(), target);
+		if(it!=d_lots.rend()){
+			d_lots.erase((++it).base());
 			--num;
 			++i;
 		}else{ //找不到target
